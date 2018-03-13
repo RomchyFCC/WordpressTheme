@@ -1,0 +1,83 @@
+/*
+Theme Name: Blog
+Author: Roman Struna
+Author URI: http://www.romanstruna.com
+Version: 0.4.3
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	height: 100vh;
+}
+li {
+	list-style-type: none;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 10px;
+	grid-template-areas: 
+	"navbar"
+	"home"
+	"footer";
+	background: #CCC;
+}
+
+.site-header {
+	grid-area: navbar;
+	padding: 10px;
+	background: url("./images/pattern.svg"), linear-gradient(#757575, #212121);
+	width: 100%;
+	color: white;
+}
+.site-header a {
+	color: white;
+}
+
+.site-content {
+	grid-area: home;
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	grid-gap: 10px;
+	background: #CCC;
+	padding: 10px;
+}
+.side-column {
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+}
+.main-column {
+	padding-right: 10px;
+	border-right: 3px solid black;
+}
+
+.site-footer {
+	grid-area: footer;
+	padding: 10px;
+	background: url("./images/pattern.svg"), linear-gradient(#757575, #212121);
+	width: 100%;
+	color: white;
+	display: grid;
+	text-align: center;
+}
+
+.footer-widgets {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+
+}
+
+.post {
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 20px;
+}
