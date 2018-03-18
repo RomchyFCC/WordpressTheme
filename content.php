@@ -4,12 +4,10 @@
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
 		</div><!-- post-thumbnail -->
-
-
-
+		<div class="post-excerpt">
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<p class="post-info"><?php the_time('F j, Y g:i a'); ?> | by <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> | Posted in
+		<p class="post-info"><?php the_time('F j, Y g:i a'); ?> | Posted in
 
 			<?php
 
@@ -37,21 +35,14 @@
 		<?php if ( is_search() OR is_archive() ) { ?>
 			<p>
 			<?php echo get_the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>">Read more&raquo;</a>
+			<a href="<?php the_permalink(); ?>">Continue...</a>
 			</p>
-		<?php } else {
-			if ($post->post_excerpt) { ?>
-
+		<?php } else { ?>
 				<p>
 				<?php echo get_the_excerpt(); ?>
-				<a href="<?php the_permalink(); ?>">Read more&raquo;</a>
+				<a href="<?php the_permalink(); ?>">Continue...</a>
 				</p>
-
-			<?php } else {
-
-				the_content();
-
-			}
+<?php 
 		} ?>
-
+		</div>
 	</article>
